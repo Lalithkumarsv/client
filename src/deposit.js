@@ -5,7 +5,7 @@ export default function Deposit() {
   let [amount, setAmount] = useState(0);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/data").then((res) => {
+    axios.get("https://server1-cu3m.onrender.com/data").then((res) => {
       let lastUser = res.data[res.data.length - 1];
       setUser(lastUser);
     });
@@ -16,7 +16,7 @@ export default function Deposit() {
     if (!user) return;
 
     let updatedUser = { ...user, amount: user.amount + Number(amount) };
-    axios.put(`http://localhost:8080/update/${user._id}`, updatedUser).then(() => {
+    axios.put(`https://server1-cu3m.onrender.com/update/${user._id}`, updatedUser).then(() => {
       setUser(updatedUser); // Update UI
     });
   }
