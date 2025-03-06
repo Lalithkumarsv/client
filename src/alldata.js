@@ -11,12 +11,12 @@ export default function Alldata() {
   }, []);
 
   async function fetchData() {
-    let result = await axios.get("http://localhost:8080/data");
+    let result = await axios.get("https://server1-cu3m.onrender.com/data");
     setData(result.data);
   }
 
   async function handleDelete(id) {
-    await axios.delete(`http://localhost:8080/delete/${id}`);
+    await axios.delete(`https://server1-cu3m.onrender.com/delete/${id}`);
     fetchData();
   }
 
@@ -27,7 +27,7 @@ export default function Alldata() {
 
   async function handleUpdate(e) {
     e.preventDefault();
-    await axios.put(`http://localhost:8080/update/${editId}`, editUser);
+    await axios.put(`https://server1-cu3m.onrender.com/update/${editId}`, editUser);
     setEditId(null);
     fetchData();
   }
