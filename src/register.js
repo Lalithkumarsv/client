@@ -15,7 +15,7 @@ export default function Register(){
         console.log(name,email,pass)
         //users.users.push({name,email,password:pass,amount:1000})
         let item=({name:name,email:email,password:pass,amount:1000})
-        axios.post('http://localhost:8080/create',item)
+        axios.post('https://server1-cu3m.onrender.com/create',item)
     }
 
     return(<>
